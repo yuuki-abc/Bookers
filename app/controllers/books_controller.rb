@@ -1,11 +1,11 @@
 class BooksController < ApplicationController
+
   def top
   end
 
   def books
     @books = Book.all
     @book = Book.new
-    # redirect_to '/show' ☆☆☆☆☆☆☆☆☆☆
   end
 
   def show
@@ -13,7 +13,13 @@ class BooksController < ApplicationController
   end
 
   def edit
-    @books = Book.find(params[:id])
+    @book = Book.find(params[:id])
+  end
+
+  def update
+    book = Book.find(params[:id])
+    book.update(book_params)
+    redirect_to book_path(book), method: :get
   end
 
   def create
@@ -22,16 +28,10 @@ class BooksController < ApplicationController
     redirect_to books_path, method: :get
   end
 
-  def update
-    book = Book.find(params[:id])
-    book.update(blog_params)
-    # redirect_to blog_path(blog) ☆☆☆☆☆☆☆☆☆☆
-  end
-
   def destroy
     book = Book.find(params[:id])
     book.destroy
-    # redirect_to blogs_path ☆☆☆☆☆☆☆☆☆☆
+    redirect_to books_path, method: :get
   end
 
   private
