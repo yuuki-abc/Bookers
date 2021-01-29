@@ -1,6 +1,10 @@
 <h1>Books#show</h1>
 
-戻るボタン(booksに戻る？)
-編集への遷移を設置
+<p>タイトル</p>
+<span><%= @book.title %></span>
+<p>本文</p>
+<span><%= @book.body %></span>
 
-<%= link_to blog.title, blog_path(blog) %>
+
+<%= link_to '編集', books_path %>
+<%= link_to '戻る', books_path %>

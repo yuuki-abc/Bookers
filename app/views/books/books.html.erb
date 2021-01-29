@@ -6,7 +6,9 @@
   <span><%= book.title %></span>
   <p>本文</p>
   <span><%= book.body %></span>
+  <%= link_to '詳細', "/books/#{book.id}" %>
 <% end %>
+
 
 <%= form_with model: @book, url:'/books', local:true do |f| %>
   <h4>タイトル</h4>
