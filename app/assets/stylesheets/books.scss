@@ -1,3 +1,116 @@
 // Place all the styles related to the books controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#error_explanation {
+  width: 60%;
+  border: 2px solid red;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+
+  ul {
+    margin: 40px 0 40px 15%;
+  }
+
+  li {
+    list-style-position: inside;
+  }
+
+  h2 {
+    ftext-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin-bottom: 0;
+    background-color: #c00;
+    color: #fff;
+  }
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+  h2 {
+    background-color: red;
+  }
+}
+
+body {
+  width: 80%;
+  margin: 0 auto;
+  h1 {
+    margin-top: 20px;
+    font-size: 20px;
+  }
+}
+
+#top {
+  .top-container {
+    text-align: center;
+    padding-top: 30px;
+
+    .top-page-title {
+      margin: 0 auto;
+    }
+
+    .link-wrap {
+      margin-top: 50px;
+    }
+  }
+}
+
+#books {
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 50px auto 80px auto;
+
+    thead {
+      text-align: 20px;
+      height: 30px;
+      border-bottom: 2px solid;
+
+      th {
+        height: 60px;
+        text-align: left;
+        padding-left: 10px;
+      }
+    }
+
+    tbody {
+
+      tr {
+        height: 50px;
+      }
+
+      tr:nth-child(odd) {
+        background: #E0FFFF;
+      }
+
+      tr:nth-child(even) {
+        background: #FFFFE0;
+      }
+
+      td {
+        padding-left: 10px;
+      }
+    }
+
+  }
+
+  h2 {
+    font-size: 12px;
+  }
+
+  .field {
+    margin-top: 10px;
+  }
+
+}
