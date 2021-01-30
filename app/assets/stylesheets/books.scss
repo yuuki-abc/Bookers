@@ -7,14 +7,17 @@
   box-sizing: border-box;
 }
 
-.flash-message {
+.flash-message-line {
+  width: 100%;
   position: absolute;
   top: 0;
-  background-color: #ff4500;
+  left: 0;
+  background-color: #4169e1;
   color: #fff;
 
-  &.text-success{
-      background-color: #4169e1;
+  .flash-message {
+    width: 80%;
+    margin: 0 auto;
   }
 
 }
@@ -47,9 +50,7 @@
 
   padding: 2px;
   background-color: red;
-  display: table;
-  // これが無いと枠のサイズが狂う
-
+  display: table; // これが無いと枠のサイズが狂う
   h3 {
     padding: 0;
     background-color: red;
@@ -61,11 +62,12 @@
 
 }
 
-body {
+#main-container {
 
   width: 80%;
   margin: 0 auto;
   padding-top: 50px;
+  font-family: 'Yusei Magic', sans-serif;
 
   h1 {
     font-size: 30px;
@@ -95,8 +97,7 @@ body {
 
   table {
 
-    border-collapse: collapse;
-    // これがないと白く隙間が空いてしまう
+    border-collapse: collapse; // これがないと白く隙間が空いてしまう
     width: 100%;
     margin: 50px auto 80px auto;
 
@@ -186,6 +187,16 @@ body {
 
   .button {
     margin-top: 20px;
+  }
+
+  .link-wrap {
+
+    margin-top: 20px;
+
+    a:nth-child(n + 2) {
+      margin-left: 10px;
+    }
+
   }
 
 }

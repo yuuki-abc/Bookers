@@ -4,22 +4,29 @@
     <title>Bookers</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
 
-    <% if flash[:notice] %>
-      <p class="flash-message text-success"><%= flash[:notice] %></p>
-    <% end %>
+    <div class="flash-message-line">
 
-    <% if flash[:alert] %>
-      <p class="flash-message text-danger"><%= flash[:alert] %></p>
-    <% end %>
+      <% if flash[:notice] %>
+        <p class="flash-message text-success"><%= flash[:notice] %></p>
+      <% end %>
 
-    <%= yield %>
+      <% if flash[:alert] %>
+        <p class="flash-message text-danger"><%= flash[:alert] %></p>
+      <% end %>
+
+    </div>
+
+    <div id="main-container">
+      <%= yield %>
+    </div>
 
   </body>
 </html>
