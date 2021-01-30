@@ -1,4 +1,4 @@
-<div id="books">
+<div id="books-container">
 
 <h1 class="books-title">タイトル一覧</h1>
 
@@ -46,17 +46,17 @@
 
 <%= form_with model: @book, url:'/books', local:true do |f| %>
 
-  <div class="field">
-    <label for="book_title">タイトル</label>
+  <div class="field-wrap">
+    <%= f.label :title, 'Title' %>
     <%= f.text_field :title %>
   </div>
 
-  <div class="field">
-    <label for="book_body">感想</label>
+  <div class="field-wrap">
+    <%= f.label :body, 'Body' %>
     <%= f.text_area :body %>
   </div>
 
-  <div class="field button">
+  <div class="field-wrap button">
     <%= f.submit '新規作成' %>
   </div>
 
