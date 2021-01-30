@@ -1,11 +1,24 @@
-<h1>Books#show</h1>
-<h1>詳細ページ</h1>
+<div id="show-container">
 
-<p>タイトル</p>
-<span><%= @book.title %></span>
-<p>感想</p>
-<span><%= @book.body %></span>
+  <h1>詳細ページ</h1>
 
+  <div class="wrap">
 
-<%= link_to '編集', edit_book_path(@book) %>
-<%= link_to '一覧へ戻る', books_path %>
+    <div class="title-wrap">
+      <h3>タイトル</h3>
+      <p><%= @book.title %></p>
+    </div>
+
+    <div class="body-wrap">
+      <h3>感想</h3>
+      <p><%= @book.body %></p>
+    </div>
+
+    <div class="link_to">
+      <%= link_to '編集', edit_book_path(@book) %>
+      <%= link_to '一覧へ戻る', books_path %>
+    </div>
+
+  </div>
+
+</div>

@@ -19,7 +19,7 @@ class BooksController < ApplicationController
   def update
     book = Book.find(params[:id])
     book.update(book_params)
-    redirect_to book_path(book)
+    redirect_to book_path(book), notice: "Editing was successfully"
   end
 
   def create
@@ -28,8 +28,10 @@ class BooksController < ApplicationController
     # ここでインスタンス変数で定義しておけば、render先でこの変数を使える。
 
     if @book.save
-      redirect_to book_path(@book)
+      redirect_to book_path(@book), notice: "Created successfully"
     else
+      flash[:alert] = "error"
+      # flashという名前の連想配列のnoticeというキーの値に、メッセージを代入
       render action: :books
       # createアクション内で定義したインスタンス変数でbooks viewを開ける
     end
@@ -38,7 +40,7 @@ class BooksController < ApplicationController
   def destroy
     book = Book.find(params[:id])
     book.destroy
-    redirect_to books_path
+    redirect_to books_path, notice: "Deleted successfully"
   end
 
   private

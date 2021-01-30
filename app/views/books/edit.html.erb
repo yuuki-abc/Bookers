@@ -1,9 +1,21 @@
-<h1>Books#edit</h1>
+<div id="edit-container">
 
-<%= form_with model: @book, local:true do |f| %>
-  <h4>本のタイトル</h4>
-  <%= f.text_field :title %>
-  <h4>感想</h4>
-  <%= f.text_area :body %>
-  <%= f.submit '作成する' %>
-<% end %>
+  <h1>編集</h1>
+
+  <%= form_with model: @book, local:true do |f| %>
+
+    <div class="wrap">
+
+      <h2>本のタイトル</h2>
+      <%= f.text_field :title %>
+
+      <h2>感想</h2>
+      <%= f.text_area :body %>
+
+      <div class="button"><%= f.submit '作成する' %>
+
+    </div>
+
+  <% end %>
+
+</div>
