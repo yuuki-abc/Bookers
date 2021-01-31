@@ -12,7 +12,7 @@
       <h2>感想</h2>
       <%= f.text_area :body %>
 
-      <div class="button"><%= f.submit '作成する' %>
+      <div class="button"><%= f.submit 'Update Book' %>
 
     </div>
 
@@ -20,9 +20,9 @@
 
   <div class="link-wrap">
 
-  <%= link_to '詳細', book_path(@book) %></td>
+  <%= link_to 'Show', book_path(@book) %></td>
 
-  <%= link_to '一覧へ戻る', books_path %></td>
+  <%= link_to 'Back', books_path %></td>
 
   </div>
 

@@ -7,13 +7,17 @@
   box-sizing: border-box;
 }
 
-.flash-message-line {
+.message-line {
   width: 100%;
   position: absolute;
   top: 0;
   left: 0;
-  background-color: #4169e1;
+  background-color: #2AC3ED;
   color: #fff;
+
+  &.error {
+    background-color: #ED542A;
+  }
 
   .flash-message {
     width: 80%;

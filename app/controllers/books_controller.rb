@@ -18,11 +18,14 @@ class BooksController < ApplicationController
 
   def update
     book = Book.find(params[:id])
-    book.update(book_params)
-    redirect_to book_path(book), notice: "Editing was successfully"
-    # redirect_toメソッドは引数にキーと値のセットを入れればflash連想配列へ、
-    # 格納してくれる。
-    # noticeとalertというキーに関しては、{}を省略して入力出来る
+      if book.update(book_params)
+        redirect_to book_path(book), notice: "Editing was successfully"
+        # redirect_toメソッドは引数にキーと値のセットを入れればflash連想配列へ、
+        # 格納してくれる。
+        # noticeとalertというキーに関しては、{}を省略して入力出来る
+      else
+        redirect_to book_path(book), alert: "update => error"
+      end
   end
 
   def create
@@ -35,7 +38,7 @@ class BooksController < ApplicationController
       # 全て格納してくれるのか？
       redirect_to book_path(@book), notice: "Created successfully"
     else
-      # flash[:alert] = "error" # エラー表示が多くクドいかも
+      # flash[:alert] = "error" # エラー表示が多くクドいかも？
       # flashという名前の連想配列のnoticeというキーの値に、メッセージを代入
       render action: :books
       # createアクション内で定義したインスタンス変数でbooks viewを開ける
@@ -44,8 +47,11 @@ class BooksController < ApplicationController
 
   def destroy
     book = Book.find(params[:id])
-    book.destroy
-    redirect_to books_path, notice: "Deleted successfully"
+    if book.destroy
+      redirect_to books_path, notice: "Deleted successfully"
+    else
+      redirect_to book_path(book), alert: "delete => error"
+    end
   end
 
   private
